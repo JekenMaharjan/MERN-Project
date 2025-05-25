@@ -62,9 +62,9 @@ const handleCalculation = (value) => {
         {buttons.map((item,id)=>{
             return (
                 <div key={id} className='flex p-2'>
-                    {item.map((val, id)=>{
+                    {item.map((val, idx)=>{
                         return (
-                            <button  key={id}
+                            <button  key={idx}
                             onClick={()=> handleCalculation(val)}
                             className='bg-black text-white p-4 m-2 rounded-xl w-20 cursor-pointer'>
                                 {val}
