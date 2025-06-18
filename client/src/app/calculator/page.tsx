@@ -1,7 +1,10 @@
 'use client'
 import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 
 const Caclulator = () => {
+    const {value} = useSelector(state=>state.counter)
+
     const [result, setResult] = useState('')
     const buttons = [
         ['C', '(', ')', 'del'],
@@ -58,6 +61,7 @@ const handleCalculation = (value) => {
 }
   return (
     <div className='bg-slate-500 max-w-fit max-h-fit rounded-xl p-5 m-5'>
+        {value}
        <div className='border border-black w-93 h-26 rounded-xl m-3 flex justify-end items-end p-3 text-2xl'>{result}</div> 
         {buttons.map((item,id)=>{
             return (
